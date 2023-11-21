@@ -1,6 +1,8 @@
 package org.lessons.java.event;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
@@ -9,6 +11,23 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
+//		Milestone 3 ---------------------------------------
+		LocalDate ld = LocalDate.parse("2024-10-10");
+		LocalTime lt = LocalTime.parse("12:30:40");
+		BigDecimal bd = new BigDecimal("20.50");
+		
+		try {
+			Concerto concert = new Concerto("Mio concerto", ld, 200, lt, bd);
+			System.out.println(concert.getFullDate());
+			System.out.println(concert.getFormattedPrice());
+			System.out.println(concert);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+//		----------------------------------------------------
+		
+//		Milestone 2 ----------------------------------------
 		Scanner in = new Scanner(System.in);
 		
 		System.out.println("Inserisci il nome dell'evento");
@@ -63,6 +82,7 @@ public class Main {
 		int userReserve = Integer.parseInt(strUserReserve);
 		
 		if(userReserve == 2) {
+			in.close();
 			return;
 		}
 		
@@ -102,6 +122,7 @@ public class Main {
 		int userCancelReserve = Integer.parseInt(strUserCancelReserve);
 		
 		if(userCancelReserve == 2) {
+			in.close();
 			return;
 		}
 		
@@ -134,6 +155,7 @@ public class Main {
 				+ "\n" + "Rimangono quindi: " + event.getAvailableSeats() + " posti"
 				+ "\n---------------------------------------------");
 		
+		in.close();
 		
 		
 	}
