@@ -56,6 +56,10 @@ public class Evento {
 		return reservedSeats;
 	}
 	
+	public int getAvailableSeats() {
+		return totalSeatsNumber - reservedSeats;
+	}
+	
 	public void reserve() throws Exception {
 		
 		checkDate("Non puoi prenotare un posto per questo evento perchè si è già concluso");
