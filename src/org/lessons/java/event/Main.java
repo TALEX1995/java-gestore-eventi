@@ -11,6 +11,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
+		
+		
 //		Milestone 3 ---------------------------------------
 		LocalDate ld = LocalDate.parse("2024-10-10");
 		LocalTime lt = LocalTime.parse("12:30:40");
@@ -26,6 +28,22 @@ public class Main {
 		}
 		
 //		----------------------------------------------------
+		
+//		Milestone 4 ---------------------------------------
+		ProgrammEventi p = new ProgrammEventi("Mostra");
+		LocalDate localD = LocalDate.parse("2024-08-08");
+		try {
+			Evento ev = new Evento("mioEvento", ld, 200);
+			Evento eve = new Evento("tuoEvento", localD, 100);
+			p.addEvent(ev);
+			p.addEvent(eve);
+			System.out.println("Milestone 4: \n" + p.orderedEvents());
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+//		----------------------------------------------------
+		
 		
 //		Milestone 2 ----------------------------------------
 		Scanner in = new Scanner(System.in);
